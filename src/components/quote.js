@@ -1,7 +1,7 @@
 import { useState } from "react";
 import './quote.css'
 
-const QuoteComponent = [
+const quotes = [
     "Believe in yourself and all that you are.",
     "Dream big. Work hard. Stay focused.",
     "Success is not final, failure is not fatal.",
@@ -22,4 +22,21 @@ const QuoteComponent = [
     "Little by little, a little becomes a lot.",
     "You’ve got this.",
     "Hustle in silence. Let success make the noise."
-]
+];
+
+export default function QuoteGenerator() {
+    const [quote, setQuote] = useState(quotes[0]);
+  
+    const getNewQuote = () => {
+      const random = Math.floor(Math.random() * quotes.length);
+      setQuote(quotes[random]);
+};
+return (
+    <div className="quote-wrapper">
+      <div className="quote-box">
+        <h2 className="quote-text">{quote}</h2>
+        <button onClick={getNewQuote} className="quote-btn">New Quote</button>
+      </div>
+    </div>
+  );
+}
