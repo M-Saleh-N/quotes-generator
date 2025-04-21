@@ -4,4 +4,13 @@ body {
     background: #fff8e7; /* Creamish background */
   }
   
- 
+  .quote-wrapper {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff8e7;
+    padding: 40px 20px;
+  }
+  
+  
